@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/59b162e155.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main class="main">
+        <div class="container tracker-container">
+            <header class="header">
+                <h1 class="title">Expense Tracker</h1>
+            </header>
+            <section class="balance">
+                <div class="total-balance">
+                    <h2 class="subtitle">YOUR BALANCE</h2>
+                    <span class="total" id="balance">$0.00</span>
+                </div>
+                <div class="out-in-comes">
+                    <div class="total-income">
+                        <p>INCOME</p>
+                        <span class="total total-positive" id="income">$0.00</span>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="total-expense">
+                        <p>EXPENSE</p>
+                        <span class="total total-negative" id="expense">$0.00</span>
+                    </div>
+                </div>
+            </section>
+            <section class="transaction-history">
+                <h2 class="subtitle">Transaction History</h2>
+                <div class="horizontal-line"></div>
+                <ul class="transactions" id="transactions">
+                    <li class="empty-transaction" id="emptyTransaction">
+                        <span class="empty-state" id="emptyState">No transactions yet. Add one!</span>
+                    </li>
+                    <li class="transaction transaction-expense">
+                        <label class="transaction-content">
+                            <span>Lorem, ipsum.</span>
+                            <span>-$0</span>
+                        </label>
+                    </li>
+                    <li class="transaction transaction-expense">
+                        <label class="transaction-content">
+                            <span>Lorem, ipsum.</span>
+                            <span>-$0</span>
+                        </label>
+                    </li>
+                    <li class="transaction transaction-income">
+                        <label class="transaction-content">
+                            <span>Lorem, ipsum.</span>
+                            <span>+$0</span>
+                        </label>
+                    </li>
+                    <li class="transaction transaction-income">
+                        <label class="transaction-content">
+                            <span>Lorem, ipsum.</span>
+                            <span>+$0</span>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+            <section class="add-transaction">
+                <h2 class="subtitle">Add New Transaction</h2>
+                <div class="horizontal-line"></div>
+                <form class="input-transaction" id="transactionForm">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="descriptionInput" class="input"
+                        placeholder="Detail of Transaction" autocomplete="off" required>
+                    <label for="amount">Transaction Amount</label>
+                    <input type="number" step="0.01" name="amount" id="amountInput" class="input"
+                        placeholder="Dollar Value of Transaction" autocomplete="off" required>
+                    <label for="type">Select type</label>
+                    <select name="type" id="type" required>
+                        <option value="" disabled selected>Select type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <button type="submit" class="add-transaction-btn">Add transaction</button>
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
