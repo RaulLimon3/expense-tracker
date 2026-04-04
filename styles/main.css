@@ -14,6 +14,10 @@
 
     --clr-border: #dddddd;
 
+    --clr-button: #1b96f9;
+    --clr-button-hover: #0569ba;
+    --clr-button-active: #033a68;
+
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;

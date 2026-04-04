@@ -43,47 +43,53 @@
                         <span class="empty-state" id="emptyState">No transactions yet. Add one!</span>
                     </li>
                     <li class="transaction transaction--expense">
-                        <label class="transaction__content">
+                        <div class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>-$0</span>
-                        </label>
+                        </div>
                     </li>
                     <li class="transaction transaction--expense">
-                        <label class="transaction__content">
+                        <div class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>-$0</span>
-                        </label>
+                        </div>
                     </li>
                     <li class="transaction transaction--income">
-                        <label class="transaction__content">
+                        <div class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>+$0</span>
-                        </label>
+                        </div>
                     </li>
                     <li class="transaction transaction--income">
-                        <label class="transaction__content">
+                        <div class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>+$0</span>
-                        </label>
+                        </div>
                     </li>
                 </ul>
             </section>
             <section class="add-transaction">
                 <h2 class="subtitle">Add New Transaction</h2>
                 <div class="horizontal-line"></div>
-                <form class="input-transaction" id="transactionForm">
-                    <label for="description">Description</label>
-                    <input type="text" name="description" id="descriptionInput" class="input"
-                        placeholder="Detail of Transaction" autocomplete="off" required>
-                    <label for="amount">Transaction Amount</label>
-                    <input type="number" step="0.01" name="amount" id="amountInput" class="input"
-                        placeholder="Dollar Value of Transaction" autocomplete="off" required>
-                    <label for="type">Select type</label>
-                    <select name="type" id="type" required>
-                        <option value="" disabled selected>Select type</option>
-                        <option value="income">Income</option>
-                        <option value="expense">Expense</option>
-                    </select>
+                <form class="form-transaction" id="transactionForm">
+                    <div class="inputs">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="input"
+                            placeholder="Detail of Transaction" autocomplete="off" required>
+                    </div>
+                    <div class="inputs">
+                        <label for="amount">Transaction Amount</label>
+                        <input type="number" step="0.01" name="amount" id="amount" class="input"
+                            placeholder="Dollar Value of Transaction" autocomplete="off" required>
+                    </div>
+                    <div class="inputs">
+                        <label for="type">Select type</label>
+                        <select name="type" id="type" class="input" required>
+                            <option value="" disabled selected>Select type</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
                     <button type="submit" class="add-transaction-btn">Add transaction</button>
                 </form>
             </section>

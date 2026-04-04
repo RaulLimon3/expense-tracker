@@ -74,10 +74,10 @@
     font-size: var(--fs-lg);
 }
 
-.transaction-history {
+.transaction-history, .add-transaction {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
 }
 
 .horizontal-line {
@@ -128,4 +128,67 @@
     display: flex;
     justify-content: space-between;
     color: var(--clr-text-secundary);
+}
+
+.form-transaction {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    font-weight: bold;
+    margin-bottom: var(--spacing-sm);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+label {
+    align-self: start;
+}
+
+.input {
+    width: 100%;
+    font-size: var(--fs-md);
+    padding: var(--spacing-sm);
+    border: none;
+    border-radius: 5px;
+    outline: 1px solid var(--clr-border);
+    transition: outline 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:hover {
+    outline: 1px solid var(--clr-black);
+}
+
+.input:focus {
+    box-shadow: var(--shadow-sm);
+}
+
+.input:focus-visible {
+    outline: 2px solid var(--clr-black);
+}
+
+.input--danger {
+    outline: 1px solid var(--clr-expense);
+}
+
+.add-transaction-btn {
+    background: var(--clr-button);
+    font-size: var(--fs-md);
+    font-weight: bold;
+    color: var(--clr-white);
+    padding: var(--spacing-md);
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.add-transaction-btn:hover {
+    background: var(--clr-button-hover);
+}
+
+.add-transaction-btn:active {
+    background: var(--clr-button-active);
+    transform: scale(0.98);
 }
