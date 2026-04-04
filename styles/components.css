@@ -6,3 +6,64 @@
     max-width: 500px;
     margin: 0 auto;
 }
+
+.header {
+    text-align: center;
+}
+
+.title {
+    font-weight: 700;
+    font-size: var(--fs-xl);
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: var(--fs-lg);
+}
+
+
+.balance {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.total {
+    font-weight: bold;
+    font-size: var(--fs-xl);
+}
+
+.total-positive {
+    color: var(--clr-income);
+}
+
+.total-negative {
+    color: var(--clr-expense);
+}
+
+.balance-summary {
+    background: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    font-weight: bold;
+    box-shadow: var(--shadow-sm);
+}
+
+.total-income, .total-expense {
+    flex: 1;
+    text-align: center;
+}
+
+.vertical-line {
+    background: var(--clr-border);
+    height: 100%;
+    min-height: 40px;
+    width: 1px;
+}
+
+.balance-summary .total {
+    font-size: var(--fs-lg);
+}

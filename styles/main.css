@@ -3,8 +3,8 @@
 
 :root {
     --clr-bg: #f2f2f2;
-    --clr-white: #011627;
-    --clr-black: #FDFFFC;
+    --clr-black: #011627;
+    --clr-white: #FDFFFC;
 
     --clr-income: #249b90;
     --clr-expense: #ad1225;
@@ -22,11 +22,11 @@
 
     --ff-main: "Funnel Sans", sans-serif;
 
-    --fs-xs: ;
-    --fs-ms: ;
-    --fs-base: 16px;
-    --fs-lg: ;
-    --fs-xl: ;
+    --fs-xs: 0.5rem;
+    --fs-ms: 0.8rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.5rem;
+    --fs-xl: 2rem;
 
     --lh-base: 1.4;
 
