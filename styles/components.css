@@ -5,6 +5,7 @@
     width: var(--container-width);
     max-width: 500px;
     margin: 0 auto;
+    min-height: 100vh;
 }
 
 .header {
@@ -18,14 +19,19 @@
 
 .subtitle {
     font-weight: 600;
-    font-size: var(--fs-lg);
+    font-size: var(--fs-md);
+    margin-bottom: 0;
 }
-
 
 .balance {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+}
+
+.balance-amount {
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
 }
 
 .total {
@@ -50,20 +56,76 @@
     padding: var(--spacing-md);
     font-weight: bold;
     box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-sm);
 }
 
-.total-income, .total-expense {
+.summary-amount, .expense-amount {
     flex: 1;
     text-align: center;
 }
 
 .vertical-line {
     background: var(--clr-border);
-    height: 100%;
-    min-height: 40px;
+    align-self: stretch;
     width: 1px;
 }
 
 .balance-summary .total {
     font-size: var(--fs-lg);
+}
+
+.transaction-history {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.horizontal-line {
+    background: var(--clr-border);
+    width: 100%;
+    height: 2px;
+    opacity: 0.5;
+}
+
+.transactions {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--spacing-md);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    margin-bottom: var(--spacing-sm);
+}
+
+.transactions-none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-transaction {
+    width: 100%;
+    padding: var(--spacing-md);
+    color: var(--clr-text-secundary);
+}
+
+.transaction {
+    background: var(--clr-white);
+    width: 100%;
+    padding: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.transaction--expense {
+    border-right: 5px solid var(--clr-expense);
+}
+
+.transaction--income {
+    border-right: 5px solid var(--clr-income);
+}
+
+.transaction__content {
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-text-secundary);
 }

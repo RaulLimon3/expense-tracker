@@ -19,17 +19,17 @@
                 <h1 class="title">Expense Tracker</h1>
             </header>
             <section class="balance">
-                <div class="total-balance">
+                <div class="balance-amount">
                     <h2 class="subtitle">YOUR BALANCE</h2>
                     <span class="total" id="balance">$0.00</span>
                 </div>
                 <div class="balance-summary">
-                    <div class="total-income">
+                    <div class="summary-amount">
                         <p>INCOME</p>
                         <span class="total total-positive" id="income">$0.00</span>
                     </div>
                     <div class="vertical-line"></div>
-                    <div class="total-expense">
+                    <div class="expense-amount">
                         <p>EXPENSE</p>
                         <span class="total total-negative" id="expense">$0.00</span>
                     </div>
@@ -38,30 +38,30 @@
             <section class="transaction-history">
                 <h2 class="subtitle">Transaction History</h2>
                 <div class="horizontal-line"></div>
-                <ul class="transactions" id="transactions">
+                <ul class="transactions transactions-none" id="transactions">
                     <li class="empty-transaction" id="emptyTransaction">
                         <span class="empty-state" id="emptyState">No transactions yet. Add one!</span>
                     </li>
-                    <li class="transaction transaction-expense">
-                        <label class="transaction-content">
+                    <li class="transaction transaction--expense">
+                        <label class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>-$0</span>
                         </label>
                     </li>
-                    <li class="transaction transaction-expense">
-                        <label class="transaction-content">
+                    <li class="transaction transaction--expense">
+                        <label class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>-$0</span>
                         </label>
                     </li>
-                    <li class="transaction transaction-income">
-                        <label class="transaction-content">
+                    <li class="transaction transaction--income">
+                        <label class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>+$0</span>
                         </label>
                     </li>
-                    <li class="transaction transaction-income">
-                        <label class="transaction-content">
+                    <li class="transaction transaction--income">
+                        <label class="transaction__content">
                             <span>Lorem, ipsum.</span>
                             <span>+$0</span>
                         </label>
