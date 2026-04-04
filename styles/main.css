@@ -1,0 +1,83 @@
+@import url('./layout.css');
+
+:root {
+    --clr-bg: #f2f2f2;
+    --clr-white: #011627;
+    --clr-black: #FDFFFC;
+
+    --clr-income: #249b90;
+    --clr-expense: #ad1225;
+
+    --clr-text-primary: #333;
+    --clr-text-secundary: #777;
+
+    --clr-border: #dddddd;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    --ff-main: "Funnel Sans", sans-serif;
+
+    --fs-xs: ;
+    --fs-ms: ;
+    --fs-base: 16px;
+    --fs-lg: ;
+    --fs-xl: ;
+
+    --lh-base: 1.4;
+
+    --radius-sm: 5px;
+    --radius-md: 10px;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    --container-width: 100%;
+    --container-max-width: 800px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--fs-base);
+}
+
+body {
+    font-family: var(--ff-main), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: var(--lh-base);
+    background: var(--clr-bg);
+    color: var(--clr-text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin-bottom: var(--spacing-md);
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+}
