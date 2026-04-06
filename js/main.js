@@ -8,11 +8,14 @@ const amount = document.getElementById('amount');
 const type = document.getElementById('type');
 const transactionRender = document.getElementById('transactions');
 const emptyTransaction = document.getElementById('emptyTransaction');
+const balance = document.getElementById('balance');
+const income = document.getElementById('income');
+const expense = document.getElementById('expense');
 
 // Creamos la funcion para agregar una transacción
 const addTransaction = () => {
     // Validamos los campos
-    if(!validateInput()) return;
+    if (!validateInput()) return;
 
     // Agregamos la transacción
     transactions.push({
@@ -28,6 +31,9 @@ const addTransaction = () => {
 
     // Mostramos el resultado
     renderTransactions();
+
+    // Calculamos las cantidades
+    calculateBalance();
 };
 
 // Creamos la funcion para validar nuestros campos
@@ -41,14 +47,14 @@ const validateInput = () => {
     } else {
         description.classList.remove('input--danger');
     }
-    
-    if (amount.value === '') {
+
+    if (amount.value === '' || Number(amount.value) <= 0) {
         amount.classList.add('input--danger');
         isValid = false;
     } else {
         amount.classList.remove('input--danger');
     }
-    
+
     if (type.value === '') {
         type.classList.add('input--danger');
         isValid = false;
@@ -68,7 +74,7 @@ let renderTransactions = () => {
         emptyTransaction.style.display = 'block';
         return;
     }
-    
+
     // Quitamos el mensaje
     emptyTransaction.style.display = 'none';
 
@@ -96,6 +102,44 @@ let renderTransactions = () => {
 const formatCurrency = (amount) => {
     return amount.toFixed(2);
 }
+
+// Creamos las funciones para calcular el balance general, la suma de los ingresos y gastos
+
+let calculateBalance = () => {
+    // Recorremos nuestras transacciones
+    const result = transactions.reduce((acc, transaction) => {
+        // Verificamos que tipo de transacción es
+        if (transaction.type === 'expense') {
+            // Sumamos las cantidades
+            acc.expense += transaction.amount;
+        } else {
+            acc.income += transaction.amount;
+        }
+        // Regresamos el resultado
+        return acc;
+    }, {income: 0, expense: 0});
+
+    // Calculamos el balance
+    const totalBalance = result.income - result.expense;
+
+    // Mostramos los resultados
+    expenseAmount(result.expense);
+    incomeAmount(result.income);
+    balanceAmount(totalBalance);
+}
+
+let balanceAmount = (amount) => {
+    balance.textContent = `$${formatCurrency(amount)}`;
+};
+
+let incomeAmount = (amount) => {
+    income.textContent = `$${formatCurrency(amount)}`;
+};
+
+let expenseAmount = (amount) => {
+    // Accedemos al elemento y cambiamos su valor
+    expense.textContent = `$${formatCurrency(amount)}`;
+};
 
 // Esperamos a que el usuario llene el formulario y de clic en 'Agregar'
 form.addEventListener('submit', (e) => {
