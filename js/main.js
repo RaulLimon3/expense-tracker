@@ -6,6 +6,8 @@ const form = document.querySelector('#transactionForm');
 const description = document.getElementById('description');
 const amount = document.getElementById('amount');
 const type = document.getElementById('type');
+const transactionRender = document.getElementById('transactions');
+const emptyTransaction = document.getElementById('emptyTransaction');
 
 // Creamos la funcion para agregar una transacción
 const addTransaction = () => {
@@ -25,8 +27,8 @@ const addTransaction = () => {
     type.value = '';
 
     // Mostramos el resultado
-    console.log(transactions);
-}
+    renderTransactions();
+};
 
 // Creamos la funcion para validar nuestros campos
 const validateInput = () => {
@@ -56,6 +58,44 @@ const validateInput = () => {
 
     return isValid;
 };
+
+// Creamos una función para mostrar todas las transacciones
+let renderTransactions = () => {
+    // Limpiamos la pantalla
+    transactionRender.innerHTML = '';
+    // Verificamos si no hay algun registro
+    if (transactions.length === 0) {
+        emptyTransaction.style.display = 'block';
+        return;
+    }
+    
+    // Quitamos el mensaje
+    emptyTransaction.style.display = 'none';
+
+    // Recorremos las transacciones
+    transactions.forEach(transaction => {
+        // Agregamos nuestro elemento
+        const li = document.createElement('li');
+        // Agregamos los estilos
+        const isExpense = transaction.type === 'expense';
+        // Verificamos si es un gasto o un ingreso
+        li.classList.add('transaction', isExpense ? 'transaction--expense' : 'transaction--income');
+        // Agregamos le contenido
+        li.innerHTML = `
+                <div class="transaction__content">
+                    <span>${transaction.description}</span>
+                    <span>${isExpense ? '-' : '+'}$${formatCurrency(transaction.amount)}</span>
+                </div>
+            `;
+        // Mostramos la transacciones
+        transactionRender.appendChild(li);
+    });
+};
+
+// Le damos un formato al precio
+const formatCurrency = (amount) => {
+    return amount.toFixed(2);
+}
 
 // Esperamos a que el usuario llene el formulario y de clic en 'Agregar'
 form.addEventListener('submit', (e) => {
