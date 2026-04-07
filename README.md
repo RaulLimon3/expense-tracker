@@ -7,7 +7,7 @@ A simple web application to track income and expenses, allowing users to visuali
 ## 🚀 Demo
 
 You can try the application here:
-👉 
+👉 https://raullimon3.github.io/expense-tracker/
 
 ---
 
