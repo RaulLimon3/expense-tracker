@@ -77,6 +77,7 @@ let renderTransactions = () => {
 
     // Quitamos el mensaje
     emptyTransaction.style.display = 'none';
+    transactionRender.classList.remove('transactions-none');
 
     // Recorremos las transacciones
     transactions.forEach(transaction => {

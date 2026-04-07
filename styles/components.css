@@ -5,7 +5,7 @@
     width: var(--container-width);
     max-width: 500px;
     margin: 0 auto;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .header {
@@ -74,10 +74,12 @@
     font-size: var(--fs-lg);
 }
 
-.transaction-history, .add-transaction {
+.transaction-history {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    flex: 2;
+    min-height: 40vh;
 }
 
 .horizontal-line {
@@ -90,11 +92,10 @@
 .transactions {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     overflow-y: auto;
+    flex: 1;
     scroll-behavior: smooth;
-    margin-bottom: var(--spacing-sm);
 }
 
 .transactions-none {
@@ -128,6 +129,12 @@
     display: flex;
     justify-content: space-between;
     color: var(--clr-text-secundary);
+}
+
+.add-transaction {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .form-transaction {
