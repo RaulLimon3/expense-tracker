@@ -128,7 +128,17 @@
 .transaction__content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: var(--clr-text-secundary);
+    text-align: left;
+}
+
+.transaction__content span:first-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    overflow: hidden;
 }
 
 .add-transaction {
