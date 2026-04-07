@@ -18,7 +18,7 @@ const addTransaction = () => {
     if (!validateInput()) return;
 
     // Agregamos la transacción
-    transactions.push({
+    transactions.unshift({
         description: description.value.trim(),
         amount: Number(amount.value),
         type: type.value
